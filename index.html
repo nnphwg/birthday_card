@@ -15,7 +15,7 @@
             background-image: url("card-01.png"); /* Ảnh nền */
             background-size: cover; /* Mặc định fill toàn màn hình */
             background-position: center; /* Căn giữa ảnh */
-            background-repeat: repeat;
+            background-repeat: no-repeat;
             color: white; /* Màu chữ trắng để nổi bật trên nền tối */
             display: flex;
             flex-direction: column;
@@ -50,37 +50,61 @@
         }
 
         /* Điều chỉnh kích thước ảnh trên điện thoại */
+       @media (max-width: 768px) { 
+            body {
+                background-size: contain; /* Giữ nguyên tỷ lệ ảnh, tránh bị cắt */
+                background-position: top center; /* Đẩy lên trên */
+            }
+        }
+
+        h2 {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+
+        img {
+            max-width: 90vw; /* Chiếm 90% chiều rộng màn hình */
+            max-height: 80vh; /* Chiếm 80% chiều cao màn hình */
+            width: auto; /* Giữ nguyên tỷ lệ ảnh */
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            object-fit: contain;
+        }
+
+        /* Điều chỉnh kích thước ảnh trên điện thoại */
         @media (max-width: 768px) { 
             img {
-                max-width: 95vw;
+                max-width: 95vw; /* Tăng kích thước trên màn hình nhỏ */
                 max-height: 85vh;
             }
         }
 
         button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            background-color: #ff4081;
-            color: white;
-            border-radius: 5px;
-            transition: 0.3s ease-in-out;
-        }
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #ff4081;
+    color: white;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
 
-        button:hover {
-            background-color: #e91e63;
-        }
+button:hover {
+    background-color: #e91e63;
+}
 
-        /* Điều chỉnh nút trên điện thoại */
-        @media (max-width: 768px) { 
-            button {
-                font-size: 18px;
-                padding: 14px 24px;
-                border-radius: 8px;
-            }
-        }
+/* Điều chỉnh nút trên điện thoại */
+@media (max-width: 768px) { 
+    button {
+        font-size: 18px;  /* Tăng size chữ */
+        padding: 14px 24px; /* Tăng kích thước */
+        border-radius: 8px; /* Bo tròn hơn chút */
+    }
+}
+
 
         /* Footer cố định ở cuối màn hình */
         footer {
@@ -94,11 +118,9 @@
     </style>
 </head>
 <body>
-    <div class="content">
-        <h2>S4C's 11th Birthday</h2>
-        <img id="thankYouCard" src="" alt="Thiệp cảm ơn" />
-        <button onclick="showRandomCard()">Hiển thị thiệp khác</button>
-    </div>
+    <h2>S4C's 11th Birthday</h2>
+    <img id="thankYouCard" src="" alt="Thiệp cảm ơn" />
+    <button onclick="showRandomCard()">Hiển thị thiệp khác</button>
 
     <script>
         const cards = [
@@ -120,7 +142,7 @@
         }
 
         // Hiển thị một thiệp ngẫu nhiên khi trang tải lần đầu
-        window.onload = showRandomCard;
+        showRandomCard();
     </script>
 
     <!-- Footer -->
