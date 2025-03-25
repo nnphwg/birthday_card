@@ -19,33 +19,34 @@
             text-align: center;
         }
 
+        /* Điều chỉnh nền trên điện thoại */
         @media (max-width: 768px) { 
             body {
-                background-size: contain;
-                background-position: top center;
+                background-size: contain; /* Giữ nguyên tỷ lệ ảnh, tránh bị cắt */
+                background-position: top center; /* Đẩy lên trên */
             }
         }
 
         h2 {
-            color: white !important;
             margin-top: 20px;
             font-size: 24px;
-            font-weight: bold;
+            color: white !important; /* Chỉnh màu trắng cho tiêu đề */
         }
 
         img {
-            max-width: 90vw;
-            max-height: 80vh;
-            width: auto;
+            max-width: 90vw; /* Chiếm 90% chiều rộng màn hình */
+            max-height: 80vh; /* Chiếm 80% chiều cao màn hình */
+            width: auto; /* Giữ nguyên tỷ lệ ảnh */
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             object-fit: contain;
         }
 
+        /* Điều chỉnh kích thước ảnh trên điện thoại */
         @media (max-width: 768px) { 
             img {
-                max-width: 95vw;
+                max-width: 95vw; /* Tăng kích thước trên màn hình nhỏ */
                 max-height: 85vh;
             }
         }
@@ -66,14 +67,16 @@
             background-color: #e91e63;
         }
 
+        /* Điều chỉnh nút trên điện thoại */
         @media (max-width: 768px) { 
             button {
-                font-size: 20px;
-                padding: 16px 28px;
-                border-radius: 10px;
+                font-size: 18px;  /* Tăng size chữ */
+                padding: 14px 24px; /* Tăng kích thước */
+                border-radius: 8px; /* Bo tròn hơn chút */
             }
         }
 
+        /* Footer cố định ở cuối màn hình */
         footer {
             position: fixed;
             bottom: 10px;
@@ -109,11 +112,10 @@
         }
 
         // Hiển thị một thiệp ngẫu nhiên khi trang tải lần đầu
-        window.onload = function() {
-            showRandomCard();
-        };
+        window.onload = showRandomCard;
     </script>
 
+    <!-- Footer -->
     <footer>
         s4c.club ©2025
     </footer>
