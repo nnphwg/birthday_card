@@ -7,31 +7,34 @@
     
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-image: url("card-01.png"); /* Ảnh nền */
-            background-size: cover; /* Mặc định fill toàn màn hình */
-            background-position: center; /* Căn giữa ảnh */
-            background-repeat: no-repeat;
-            flex-direction: column;
-            text-align: center;
-        }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    min-height: 500px; /* Tránh bị thu nhỏ quá mức */
+    background-image: url("card-01.png");
+    background-size: cover; /* Giữ nền full màn hình */
+    background-position: center;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    text-align: center;
+    color: white; /* Mặc định chữ trắng */
+}
 
-        /* Điều chỉnh nền trên điện thoại */
-        @media (max-width: 768px) { 
-            body {
-                background-size: contain; /* Giữ nguyên tỷ lệ ảnh, tránh bị cắt */
-                background-position: top center; /* Đẩy lên trên */
-            }
-        }
+/* Điều chỉnh nền trên điện thoại */
+@media (max-width: 768px) { 
+    body {
+        background-size: cover; /* Không để contain nữa */
+        background-position: center center;
+    }
+}
 
-        h2 {
-            margin-top: 20px;
-            font-size: 24px;
-        }
-
+/* Fix màu chữ */
+h2 {
+    margin-top: 20px;
+    font-size: 24px;
+    color: white; /* Chắc chắn chữ trắng */
+}
         img {
             max-width: 90vw; /* Chiếm 90% chiều rộng màn hình */
             max-height: 80vh; /* Chiếm 80% chiều cao màn hình */
