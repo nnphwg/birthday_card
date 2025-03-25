@@ -3,26 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <h2 style="color: white;">S4C's 11th Birthday</h2>
+    <title>S4C's 11th Birthday</title>
     
     <style>
         body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-image: url("card-01.png"); /* Đặt ảnh nền */
-    background-size: contain; /* Hiển thị toàn màn hình */
-    background-position: center; /* Căn giữa ảnh */
-    background-repeat: no-repeat; /* Không lặp lại ảnh */
-            .background {
-            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             height: 100vh;
-            background-size: cover;
+            background-image: url("card-01.png"); /* Đặt ảnh nền */
+            background-size: cover; /* Hiển thị toàn màn hình */
+            background-position: center; /* Căn giữa ảnh */
+            background-repeat: no-repeat; /* Không lặp lại ảnh */
+            flex-direction: column;
+            text-align: center;
+            color: white;
         }
-    flex-direction: column;
-    text-align: center;
-}
+
+        h2 {
+            margin-top: 20px; /* Đẩy chữ xuống thấp hơn */
+            font-size: 24px; /* Tăng kích thước chữ nếu cần */
+        }
+
         img {
             max-width: 90vw;
             max-height: 80vh;
@@ -30,6 +32,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             object-fit: contain;
         }
+
         button {
             margin-top: 20px;
             padding: 10px 20px;
@@ -40,35 +43,27 @@
             color: white;
             border-radius: 5px;
         }
-        .instructions {
-            margin-top: 20px;
-            font-size: 14px;
-            color: #555;
-        }
     </style>
 </head>
-    h2 {
-    margin-top: 20px; /* Đẩy chữ xuống thấp hơn */
-    font-size: 24px; /* Tăng kích thước chữ nếu cần */
-}
 <body>
+    <h2>S4C's 11th Birthday</h2>
     <img id="thankYouCard" src="" alt="Thiệp cảm ơn" />
     <button onclick="showRandomCard()">Hiển thị thiệp khác</button>
-    <!-- <p class="instructions">Nhấp đúp vào file <strong>index.html</strong> để mở trên trình duyệt.<br>Mỗi lần bạn tải lại trang hoặc nhấn nút "Hiển thị thiệp khác", hệ thống sẽ chọn ngẫu nhiên một thiệp để hiển thị.</p> -->
 
     <script>
         const cards = [
-    "./card1-03.png",
-    "./card2-03.png",
-    "./card3-03.png",
-    "./card4-03.png",
-    "./card5-03.png",
-    "./card6-03.png",
-    "./card7-03.png",
-    "./card8-03.png",
-    "./card9-03.png",
-    "./card10-03.png"
-];
+            "./card1-03.png",
+            "./card2-03.png",
+            "./card3-03.png",
+            "./card4-03.png",
+            "./card5-03.png",
+            "./card6-03.png",
+            "./card7-03.png",
+            "./card8-03.png",
+            "./card9-03.png",
+            "./card10-03.png"
+        ];
+
         function showRandomCard() {
             const randomIndex = Math.floor(Math.random() * cards.length);
             document.getElementById("thankYouCard").src = cards[randomIndex];
@@ -77,6 +72,7 @@
         // Hiển thị một thiệp ngẫu nhiên khi trang tải lần đầu
         showRandomCard();
     </script>
-    <p style="margin-top: 20px; color: white; font-size: 14px;">©nnphwg</p>
+
+    <p style="margin-top: 20px; font-size: 14px;">©nnphwg</p>
 </body>
 </html>
