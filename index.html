@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S4C's 11th Birthday</title>
+    <h2 style="color: white;">S4C's 11th Birthday</h2>
     <style>
         body {
     display: flex;
@@ -11,7 +11,7 @@
     align-items: center;
     height: 100vh;
     background-image: url("card-01.png"); /* Đặt ảnh nền */
-    background-size: cover; /* Hiển thị toàn màn hình */
+    background-size: contain; /* Hiển thị toàn màn hình */
     background-position: center; /* Căn giữa ảnh */
     background-repeat: no-repeat; /* Không lặp lại ảnh */
     flex-direction: column;
@@ -68,5 +68,15 @@
         // Hiển thị một thiệp ngẫu nhiên khi trang tải lần đầu
         showRandomCard();
     </script>
+    <p style="margin-top: 20px; color: white; font-size: 14px;">Made by © nnphwg</p>
+.footer {
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-size: 14px;
+}
+<p class="footer">©nnphwg</p>
 </body>
 </html>
