@@ -8,6 +8,7 @@
     <style>
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -15,14 +16,15 @@
             background-size: cover; /* Hiển thị toàn màn hình */
             background-position: center; /* Căn giữa ảnh */
             background-repeat: no-repeat; /* Không lặp lại ảnh */
-            flex-direction: column;
             text-align: center;
             color: white;
+            margin: 0;
+            padding-bottom: 40px; /* Để không bị che mất nội dung khi footer cố định */
         }
 
         h2 {
-            margin-top: 20px; /* Đẩy chữ xuống thấp hơn */
-            font-size: 24px; /* Tăng kích thước chữ nếu cần */
+            margin-top: 20px;
+            font-size: 24px;
         }
 
         img {
@@ -42,6 +44,50 @@
             background-color: #ff4081;
             color: white;
             border-radius: 5px;
+        }
+
+        /* Footer cố định ở cuối màn hình */
+        footer {
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            color: white;
+        }
+
+        /* Responsive layout for smaller screens (like smartphones) */
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 20px;
+            }
+
+            img {
+                max-width: 80vw;
+                max-height: 60vh;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+        
+        /* Extra small screens (for phones in portrait mode) */
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 18px;
+            }
+
+            img {
+                max-width: 75vw;
+                max-height: 50vh;
+            }
+
+            button {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
         }
     </style>
 </head>
@@ -73,6 +119,9 @@
         showRandomCard();
     </script>
 
-    <p style="margin-top: 20px; font-size: 14px;">©nnphwg</p>
+    <!-- Footer -->
+    <footer>
+        ©nnphwg
+    </footer>
 </body>
 </html>
