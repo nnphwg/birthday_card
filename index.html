@@ -51,15 +51,30 @@
         }
 
         button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            background-color: #ff4081;
-            color: white;
-            border-radius: 5px;
-        }
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #ff4081;
+    color: white;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #e91e63;
+}
+
+/* Điều chỉnh nút trên điện thoại */
+@media (max-width: 768px) { 
+    button {
+        font-size: 18px;  /* Tăng size chữ */
+        padding: 14px 24px; /* Tăng kích thước */
+        border-radius: 8px; /* Bo tròn hơn chút */
+    }
+}
+
 
         /* Footer cố định ở cuối màn hình */
         footer {
@@ -102,7 +117,7 @@
 
     <!-- Footer -->
     <footer>
-        ©nnphwg
+        s4c.club ©2025
     </footer>
 </body>
 </html>
