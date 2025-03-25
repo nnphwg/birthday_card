@@ -8,18 +8,23 @@
     <style>
         body {
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-image: url("card-01.png"); /* Đặt ảnh nền */
-            background-size: cover; /* Hiển thị toàn màn hình */
+            background-image: url("card-01.png"); /* Ảnh nền */
+            background-size: cover; /* Mặc định fill toàn màn hình */
             background-position: center; /* Căn giữa ảnh */
-            background-repeat: no-repeat; /* Không lặp lại ảnh */
+            background-repeat: no-repeat;
+            flex-direction: column;
             text-align: center;
-            color: white;
-            margin: 0;
-            padding-bottom: 40px; /* Để không bị che mất nội dung khi footer cố định */
+        }
+
+        /* Điều chỉnh nền trên điện thoại */
+        @media (max-width: 768px) { 
+            body {
+                background-size: contain; /* Giữ nguyên tỷ lệ ảnh, tránh bị cắt */
+                background-position: top center; /* Đẩy lên trên */
+            }
         }
 
         h2 {
@@ -28,11 +33,21 @@
         }
 
         img {
-            max-width: 90vw;
-            max-height: 80vh;
+            max-width: 90vw; /* Chiếm 90% chiều rộng màn hình */
+            max-height: 80vh; /* Chiếm 80% chiều cao màn hình */
+            width: auto; /* Giữ nguyên tỷ lệ ảnh */
+            height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             object-fit: contain;
+        }
+
+        /* Điều chỉnh kích thước ảnh trên điện thoại */
+        @media (max-width: 768px) { 
+            img {
+                max-width: 95vw; /* Tăng kích thước trên màn hình nhỏ */
+                max-height: 85vh;
+            }
         }
 
         button {
@@ -54,40 +69,6 @@
             text-align: center;
             font-size: 14px;
             color: white;
-        }
-
-        /* Responsive layout for smaller screens (like smartphones) */
-        @media (max-width: 768px) {
-            h2 {
-                font-size: 20px;
-            }
-
-            img {
-                max-width: 80vw;
-                max-height: 60vh;
-            }
-
-            button {
-                font-size: 14px;
-                padding: 8px 16px;
-            }
-        }
-        
-        /* Extra small screens (for phones in portrait mode) */
-        @media (max-width: 480px) {
-            h2 {
-                font-size: 18px;
-            }
-
-            img {
-                max-width: 75vw;
-                max-height: 50vh;
-            }
-
-            button {
-                font-size: 12px;
-                padding: 6px 12px;
-            }
         }
     </style>
 </head>
